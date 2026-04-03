@@ -1,0 +1,12 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bot
+    env_file: .env
+    volumes:
+      - tagdata:/app/data
+    restart: unless-stopped
+
+volumes:
+  tagdata:
